@@ -1,6 +1,8 @@
 using System;
 
 using R5T.T0131;
+using R5T.T0180;
+using R5T.T0180.Extensions;
 
 
 namespace R5T.Z0026
@@ -9,12 +11,16 @@ namespace R5T.Z0026
     public partial interface IDirectoryPaths : IValuesMarker
     {
         /// <summary>
-        /// ../David/Dropbox/.../Rivet/Shared/Data/Output
+        /// C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\
         /// </summary>
-        public string CloudSharedOutputDirectoryPath => @"C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\Output\";
+        public IDirectoryPath CloudSharedData => @"C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\".ToDirectoryPath();
         /// <summary>
-        /// ../David/Dropbox/.../Rivet/Shared/Data/Instances
+        /// C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\Output\
         /// </summary>
-        public string CloudSharedInstancesDirectoryPath => @"C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\Instances";
+        public IDirectoryPath CloudSharedOutputDirectoryPath => @"C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\Output\".ToDirectoryPath();
+        /// <summary>
+        /// C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\Instances
+        /// </summary>
+        public IDirectoryPath CloudSharedInstancesDirectoryPath => @"C:\Users\David\Dropbox\Organizations\Rivet\Shared\Data\Instances".ToDirectoryPath();
     }
 }
